@@ -1,2 +1,0 @@
-# tycoon-bits-thingo
-waow
