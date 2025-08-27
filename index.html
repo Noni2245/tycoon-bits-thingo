@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bits Tycoon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bits Tycoon</h1>
+        <div id="auth-panel">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-btn">Login</button>
+            <button id="register-btn">Register</button>
+            <div id="auth-message"></div>
+        </div>
+        <div id="game-panel" style="display:none;">
+            <div class="main-content">
+                <div class="left-panel">
+                    <div class="currency">
+                        <span id="bits">0</span> bits
+                    </div>
+                    <button id="clicker">Click for Bits</button>
+                    <h2>Upgrades</h2>
+                    <div id="upgrades"></div>
+                    <div class="action-buttons">
+                        <button id="save-server-btn">Save to Server</button>
+                        <button id="load-server-btn">Load from Server</button>
+                        <button id="shop-btn">Shop</button>
+                    </div>
+                </div>
+                <div class="right-panel">
+                    <div class="bits-visual">
+                        <div class="bits-tube-outer">
+                            <div class="bits-tube-inner" id="bits-tube-inner"></div>
+                        </div>
+                        <div class="bits-visual-label">Bits <span id="bits-visual-amount">0</span></div>
+                        <svg class="bits-coin" viewBox="0 0 64 64" width="64" height="64">
+                            <defs>
+                                <radialGradient id="coinGrad" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#ffd166"/>
+                                    <stop offset="100%" stop-color="#d4a944"/>
+                                </radialGradient>
+                            </defs>
+                            <circle cx="32" cy="32" r="28" fill="url(#coinGrad)" stroke="#bfa13e" stroke-width="5"/>
+                            <text x="32" y="40" font-size="30" font-family="Segoe UI" text-anchor="middle" fill="#fff" font-weight="bold">B</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-bits" id="floating-bits"></div>
+        <!-- Shop Modal -->
+        <div id="shop-modal" class="shop-modal">
+            <div class="shop-content">
+                <span class="close" id="shop-close">&times;</span>
+                <h2>Shop</h2>
+                <div class="shop-items">
+                    <button class="shop-item" id="shop-secret"></button>
+                    <button class="shop-item" disabled>Placeholder 2<br><span class="shop-price">100,000 bits</span></button>
+                    <button class="shop-item" disabled>Placeholder 3<br><span class="shop-price">100,000 bits</span></button>
+                    <button class="shop-item" disabled>Placeholder 4<br><span class="shop-price">100,000 bits</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

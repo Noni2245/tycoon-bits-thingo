@@ -1,0 +1,428 @@
+body {
+    background: radial-gradient(circle, #23263a 0%, #181c2a 100%);
+    color: #ecf0f1;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(35,38,58,0.95);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px #0008;
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+h1 {
+    font-size: 2.4em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 24px #0006;
+}
+
+#auth-panel {
+    margin-bottom: 24px;
+}
+
+#auth-panel input[type="text"], #auth-panel input[type="password"] {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #2d77ff;
+    background: #23263a;
+    color: #ffd166;
+    margin: 4px;
+    font-size: 1em;
+    outline: none;
+}
+
+#auth-panel button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    background: #2d77ff;
+    color: #fff;
+    font-weight: bold;
+    margin: 4px;
+    cursor: pointer;
+    transition: background .2s;
+}
+#auth-panel button:hover {
+    background: #2050a7;
+}
+#auth-message {
+    color: #ffd166;
+    margin-top: 6px;
+    min-height: 24px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.left-panel {
+    flex: 2;
+    text-align: left;
+}
+
+.currency {
+    font-size: 1.5em;
+    margin: 18px 0;
+    font-weight: bold;
+    color: #ffd166;
+    text-shadow: 0 2px 8px #0006;
+}
+
+#clicker {
+    font-size: 1.2em;
+    padding: 14px 32px;
+    margin-bottom: 32px;
+    background: linear-gradient(90deg, #2d77ff 0%, #6dafff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px #0003;
+    transition: background .2s, transform .1s;
+}
+
+#clicker:active {
+    transform: scale(0.97);
+}
+
+#clicker:hover {
+    background: linear-gradient(90deg, #2050a7 0%, #88c7ff 100%);
+}
+
+#upgrades {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.upgrade {
+    background: #202338;
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 12px #0002;
+}
+
+.upgrade-title {
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #ffd166;
+    text-shadow: 0 2px 8px #0003;
+}
+
+.upgrade-cost {
+    color: #ffd166;
+}
+
+.upgrade button {
+    margin-top: 7px;
+    background: #ffd166;
+    color: #23263a;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .2s;
+    box-shadow: 0 2px 8px #0002;
+}
+
+.upgrade button:hover {
+    background: #d6a43a;
+}
+
+.upgrade-plus {
+    font-size: 0.92em;
+    color: #8de68a;
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+.action-buttons {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#save-server-btn, #load-server-btn, #shop-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #ffd166;
+    color: #23263a;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .2s;
+    box-shadow: 0 2px 8px #0002;
+}
+#save-server-btn:hover,
+#load-server-btn:hover,
+#shop-btn:hover {
+    background: #d6a43a;
+}
+
+/* Shop Modal Styles */
+.shop-modal {
+    display: none;
+    position: fixed;
+    z-index: 12;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    overflow: auto;
+    background: rgba(30,32,44,0.82);
+    align-items: center;
+    justify-content: center;
+}
+.shop-modal.show {
+    display: flex;
+}
+.shop-content {
+    background: #23263a;
+    border-radius: 20px;
+    padding: 36px 36px 30px 36px;
+    min-width: 320px;
+    min-height: 230px;
+    box-shadow: 0 4px 40px #0008;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.shop-content h2 {
+    color: #ffd166;
+    margin-bottom: 18px;
+}
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.shop-item {
+    background: linear-gradient(135deg,#1ce2d8 0,#fa5fa7 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    padding: 18px 26px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px #1ce2d877;
+    transition: background .18s, transform .12s;
+    cursor: not-allowed;
+    min-width: 120px;
+    min-height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.shop-price {
+    font-size: 0.92em;
+    color: #fff;
+    opacity: 0.92;
+}
+.close {
+    position: absolute;
+    top: 12px; right: 18px;
+    font-size: 2em;
+    color: #fa5fa7;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color .15s;
+}
+.close:hover {
+    color: #ffd166;
+}
+
+/* Right Panel: Bits Visual */
+.right-panel {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 210px;
+}
+
+.bits-visual {
+    background: rgba(24,28,42,0.9);
+    border-radius: 18px;
+    box-shadow: 0 4px 20px #0003;
+    padding: 24px 20px 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 190px;
+    margin-top: 10px;
+    position: relative;
+    height: 70vh;
+    justify-content: center;
+}
+
+.bits-tube-outer {
+    width: 56px;
+    height: 60vh;
+    min-height: 260px;
+    max-height: 80vh;
+    background: #464e72;
+    border-radius: 30px;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 10px #0003;
+    border: 3px solid #ffd16655;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.bits-tube-inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, #1ce2d8 0%, #fa5fa7 100%);
+    border-radius: 30px 30px 28px 28px;
+    transition: height .7s cubic-bezier(.2,.7,.3,1);
+    box-shadow: 0 0 32px #fa5fa7cc, 0 0 20px #1ce2d8bb inset;
+}
+
+.bits-visual-label {
+    font-size: 1.35em;
+    color: #ffd166;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 0 2px 8px #0003;
+}
+
+.bits-coin {
+    margin-top: 20px;
+    filter: drop-shadow(0 2px 8px #ffd16677);
+    width: 72px;
+    height: 72px;
+}
+
+.floating-bits {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.floating-bit {
+    position: absolute;
+    font-size: 1.5em;
+    color: #ffd166;
+    opacity: 0.5;
+    pointer-events: none;
+    animation: floatBit 5s linear forwards;
+    user-select: none;
+    text-shadow: 0 0 12px #ffd16699;
+}
+
+@keyframes floatBit {
+    0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 0.7;
+    }
+    60% {
+        opacity: 0.85;
+    }
+    100% {
+        transform: translateY(-180px) scale(1.3) rotate(60deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .main-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .right-panel {
+        min-width: 0;
+    }
+    .bits-tube-outer {
+        width: 38px;
+        height: 30vh;
+        min-height: 120px;
+    }
+    .bits-visual {
+        height: 30vh;
+        min-width: 120px;
+    }
+    .shop-content {
+        min-width: 180px;
+        padding: 18px 8px 10px 8px;
+    }
+    .shop-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* ...existing CSS above... */
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.shop-item {
+    background: linear-gradient(135deg,#1ce2d8 0,#fa5fa7 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    padding: 18px 26px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px #1ce2d877;
+    transition: background .18s, transform .12s;
+    min-width: 120px;
+    min-height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: not-allowed;
+}
+.shop-item:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.shop-item#shop-secret.unlocked {
+    cursor: pointer;
+    opacity: 1;
+    background: linear-gradient(135deg, #1ce2d8 0, #fa5fa7 100%);
+}
+.shop-item#shop-secret.buyable {
+    cursor: pointer;
+    opacity: 1;
+}
+.shop-item#shop-secret {
+    /* Remove not-allowed by default, allow dynamic class */
+    cursor: default;
+}
+
+/* ...rest of CSS unchanged... */

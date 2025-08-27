@@ -1,0 +1,50 @@
+{
+  "noni": {
+    "bits": 5678346300,
+    "bitsPerClick": 38,
+    "upgrades": [
+      {
+        "level": 37,
+        "cost": 3362095853
+      },
+      {
+        "level": 30,
+        "cost": 409673286
+      },
+      {
+        "level": 26,
+        "cost": 196201332
+      }
+    ],
+    "shop": [
+      true,
+      false,
+      false,
+      false
+    ]
+  },
+  "Noni_Maid": {
+    "bits": 0,
+    "bitsPerClick": 1,
+    "upgrades": [
+      {
+        "level": 0,
+        "cost": 10
+      },
+      {
+        "level": 0,
+        "cost": 50
+      },
+      {
+        "level": 0,
+        "cost": 200
+      }
+    ],
+    "shop": [
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+}
