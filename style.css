@@ -425,4 +425,110 @@ h1 {
     cursor: default;
 }
 
-/* ...rest of CSS unchanged... */
+body {
+    background: radial-gradient(circle, #23263a 0%, #181c2a 100%);
+    color: #ecf0f1;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Add relative for shapes stacking */
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --- Decorative Background Shapes --- */
+.bg-shapes {
+    position: fixed;
+    z-index: 0;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+}
+.bg-shape {
+    position: absolute;
+    opacity: 0.23;
+    filter: blur(2px);
+    mix-blend-mode: lighten;
+    pointer-events: none;
+    transition: transform 12s linear;
+}
+.bg-circle1 {
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #1ce2d8 0%, #23263a 100%);
+    left: -90px; top: -70px;
+    animation: float1 18s ease-in-out infinite alternate;
+}
+.bg-circle2 {
+    width: 190px; height: 190px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fa5fa7 0%, #181c2a 90%);
+    right: -60px; top: 40vh;
+    animation: float2 22s ease-in-out infinite alternate;
+}
+.bg-triangle1 {
+    width: 0; height: 0;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-bottom: 200px solid #ffd166;
+    left: 60vw; top: -70px;
+    opacity: 0.13;
+    transform: rotate(-18deg);
+    animation: float3 28s ease-in-out infinite alternate;
+}
+.bg-triangle2 {
+    width: 0; height: 0;
+    border-left: 66px solid transparent;
+    border-right: 66px solid transparent;
+    border-top: 120px solid #6dafff;
+    right: 14vw; bottom: -70px;
+    opacity: 0.12;
+    transform: rotate(31deg);
+    animation: float4 21s ease-in-out infinite alternate;
+}
+.bg-square1 {
+    width: 110px; height: 110px;
+    background: linear-gradient(135deg, #e8aaff 0%, #1ce2d8 100%);
+    left: 10vw; bottom: 8vh;
+    border-radius: 20px;
+    opacity: 0.17;
+    transform: rotate(-16deg);
+    animation: float5 19s ease-in-out infinite alternate;
+}
+.bg-square2 {
+    width: 70px; height: 70px;
+    background: linear-gradient(135deg, #ffd166 0%, #fa5fa7 100%);
+    right: 7vw; top: 13vh;
+    border-radius: 24px;
+    opacity: 0.17;
+    transform: rotate(25deg);
+    animation: float6 26s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(60px);}
+}
+@keyframes float2 {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-44px);}
+}
+@keyframes float3 {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(50px);}
+}
+@keyframes float4 {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-44px);}
+}
+@keyframes float5 {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-32px);}
+}
+@keyframes float6 {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(24px);}
+}
